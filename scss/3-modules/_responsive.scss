@@ -1,11 +1,13 @@
+/* Media Queries */
+
 @media (max-width: 450px) {
   .header {
     flex-direction: column;
 
     &__logo {
-      font-size: 3rem;
       margin-left: 0;
       margin-bottom: 10px;
+      font-size: 3rem;
     }
 
     &__searchbar {

@@ -11,22 +11,18 @@
   }
 
   &__searchbar {
-    font-family: "Poppins", sans-serif;
-    background-color: $color-main;
-    color: $color-white;
-    outline: none;
     padding: 10px 20px;
     margin: 20px;
-    border-radius: 20px;
+    color: $color-accent;
+    background-color: $color-white;
     border-color: $color-background;
+    border-radius: 20px;
     border-style: solid;
+    outline: none;
+    font-family: "Poppins", sans-serif;
 
     &::placeholder {
       color: $color-accent;
-    }
-
-    &:focus {
-      background-color: $color-background;
     }
   }
 }
@@ -42,8 +38,8 @@
 
 .card {
   margin: 20px 0;
-  border-radius: 8px;
   background-color: $color-main;
+  border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
 
   &__img {
@@ -60,20 +56,19 @@
   }
 
   &__title {
+    width: 100%;
     color: $color-white;
     font-size: 1rem;
     white-space: nowrap;
-    width: 100%;
     overflow: hidden;
-    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
   }
 
   &__rating {
     padding: 5px;
+    background-color: $color-background;
     border-radius: 5px;
     font-weight: bold;
-    background-color: $color-background;
 
     &--green {
       color: greenyellow;
