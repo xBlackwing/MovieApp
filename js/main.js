@@ -5,34 +5,34 @@ const modalBackground = document.querySelector(".modal__background");
 
 const apiMovies = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1`;
 const apiSearch = `https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=`;
-const urlImg = `https://image.tmdb.org/t/p/w500`;
+const imgUrl = `https://image.tmdb.org/t/p/w500`;
 
 //Event Listeners
 headerSearchbar.addEventListener("input", searchMovies);
 main.addEventListener("click", showModal);
 
 //Functions
+createMovies(getData(apiMovies));
 
-createMovies(getMovies(apiMovies));
-
-async function getMovies(api) {
+async function getData(api) {
   const response = await fetch(api);
   const responseData = await response.json();
   return responseData;
 }
 
-async function createMovies(results) {
-  const result = await results;
-  const movies = result.results;
+async function createMovies(data) {
+  const moviesData = await data;
+  const movies = moviesData.results;
   main.innerHTML = "";
+  //Create a card div for each movie fetched
   movies.forEach((movie) => {
     const card = document.createElement("div");
-    card.className = "card";
+    card.classList.add("card");
     card.id = `${movie.id}`;
     const img = document.createElement("img");
-    img.className = "card__img";
+    img.classList.add("card__img");
     if (movie.poster_path) {
-      img.src = `${urlImg}${movie.poster_path}`;
+      img.src = `${imgUrl}${movie.poster_path}`;
     } else {
       img.src = "img/placeholder_poster.png";
     }
@@ -58,11 +58,26 @@ function ratingColor(rating) {
   }
 }
 
-async function createModal(results, img) {
-  const movie = await results;
+function searchMovies(e) {
+  const searchUrl = `${apiSearch}${e.target.value}`;
+  createMovies(getData(searchUrl));
+}
+
+function showModal(e) {
+  if (e.target.classList.contains("card")) {
+    modalBackground.classList.add("modal__background--active");
+    //Select the target img to use instead of fetching the same img again
+    const img = e.target.querySelector(".card__img").src;
+    const idUrl = `https://api.themoviedb.org/3/movie/${e.target.id}?api_key=04c35731a5ee918f014970082a0088b1`;
+    createModal(getData(idUrl), img);
+  }
+}
+
+async function createModal(data, img) {
+  const movie = await data;
   modalBackground.innerHTML = `
   <div class="modal">
-    <img src="${img}" class="modal__img" />
+    <img class="modal__img" src="${img}" />
     <div class="modal__info">
       <h1 class="modal__title">${movie.title}</h1>
       <p class="modal__genre">${getGenres(movie.genres)}</p>
@@ -77,11 +92,7 @@ async function createModal(results, img) {
       </p>
     </div>
   </div>`;
-}
-
-function searchMovies(e) {
-  const search = `${apiSearch}${e.target.value}`;
-  createMovies(getMovies(search));
+  modalBackground.addEventListener("click", hideModal);
 }
 
 function getGenres(genres) {
@@ -96,11 +107,8 @@ function getGenres(genres) {
   return genresList;
 }
 
-function showModal(e) {
-  if (e.target.classList.contains("card")) {
-    modalBackground.classList.add("modal__background--active");
-    const img = e.target.querySelector(".card__img").src;
-    const id = `https://api.themoviedb.org/3/movie/${e.target.id}?api_key=04c35731a5ee918f014970082a0088b1`;
-    createModal(getMovies(id), img);
+function hideModal(e) {
+  if (e.target.classList.contains("modal__background--active")) {
+    modalBackground.classList.remove("modal__background--active");
   }
 }

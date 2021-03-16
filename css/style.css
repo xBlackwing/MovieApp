@@ -129,6 +129,8 @@ a {
   color: #ebe5e2;
   background-color: #1d203d;
   border-radius: 8px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
 }
 
 .modal__img {
@@ -138,6 +140,11 @@ a {
 
 .modal__info {
   padding: 0 50px;
+}
+
+.modal__title {
+  max-width: 22ch;
+  font-size: 1.7rem;
 }
 
 .modal__genre {

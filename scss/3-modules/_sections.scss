@@ -96,6 +96,7 @@
   color: $color-white;
   background-color: $color-background;
   border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
 
   &__img {
     width: 400px;
@@ -104,6 +105,11 @@
 
   &__info {
     padding: 0 50px;
+  }
+
+  &__title {
+    max-width: 22ch;
+    font-size: 1.7rem;
   }
 
   &__genre {
