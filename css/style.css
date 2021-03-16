@@ -75,6 +75,7 @@ a {
 }
 
 .card__img {
+  max-width: 100%;
   width: 300px;
   height: 450px;
   border-radius: 8px 8px 0 0;
@@ -122,6 +123,7 @@ a {
 
 /* Modal */
 .modal {
+  max-width: 80%;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -154,9 +156,13 @@ a {
 }
 
 .modal__desc {
-  margin-bottom: 30px;
   max-width: 40ch;
+  height: 200px;
+  margin-bottom: 30px;
   font-weight: 300;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .modal__duration, .modal__release {
@@ -193,6 +199,12 @@ a {
 }
 
 /* Media Queries */
+@media (max-width: 1017px) {
+  .modal__img {
+    display: none;
+  }
+}
+
 @media (max-width: 450px) {
   .header {
     -webkit-box-orient: vertical;
@@ -208,6 +220,9 @@ a {
     margin: 0;
     margin-bottom: 20px;
   }
+  .modal__info {
+    padding: 0 20px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -219,5 +234,8 @@ a {
   }
   .card__title {
     font-size: 0.8rem;
+  }
+  .card__img {
+    height: 320px;
   }
 }

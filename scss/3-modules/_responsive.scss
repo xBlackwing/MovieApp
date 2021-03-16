@@ -1,5 +1,11 @@
 /* Media Queries */
 
+@media (max-width: 1017px) {
+  .modal__img {
+    display: none;
+  }
+}
+
 @media (max-width: 450px) {
   .header {
     flex-direction: column;
@@ -15,6 +21,10 @@
       margin-bottom: 20px;
     }
   }
+
+  .modal__info {
+    padding: 0 20px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -28,5 +38,9 @@
 
   .card__title {
     font-size: 0.8rem;
+  }
+
+  .card__img {
+    height: 320px;
   }
 }

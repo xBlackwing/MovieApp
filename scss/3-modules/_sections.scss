@@ -45,6 +45,7 @@
   cursor: pointer;
 
   &__img {
+    max-width: 100%;
     width: 300px;
     height: 450px;
     border-radius: 8px 8px 0 0;
@@ -91,6 +92,7 @@
 /* Modal */
 
 .modal {
+  max-width: 80%;
   display: flex;
   align-items: center;
   color: $color-white;
@@ -119,9 +121,13 @@
   }
 
   &__desc {
-    margin-bottom: 30px;
     max-width: 40ch;
+    height: 200px;
+    margin-bottom: 30px;
     font-weight: 300;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__duration,
