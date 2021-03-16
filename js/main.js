@@ -100,7 +100,7 @@ function showModal(e) {
   if (e.target.classList.contains("card")) {
     modalBackground.classList.add("modal__background--active");
     const img = e.target.querySelector(".card__img").src;
-    const id = `http://api.themoviedb.org/3/movie/${e.target.id}?api_key=04c35731a5ee918f014970082a0088b1`;
+    const id = `https://api.themoviedb.org/3/movie/${e.target.id}?api_key=04c35731a5ee918f014970082a0088b1`;
     createModal(getMovies(id), img);
   }
 }

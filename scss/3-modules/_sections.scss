@@ -91,8 +91,6 @@
 /* Modal */
 
 .modal {
-  max-width: 80%;
-  max-height: 80%;
   display: flex;
   align-items: center;
   color: $color-white;
@@ -100,8 +98,7 @@
   border-radius: 8px;
 
   &__img {
-    width: 100%;
-    max-width: 400px;
+    width: 400px;
     border-radius: 8px 0 0 8px;
   }
 
