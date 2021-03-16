@@ -45,9 +45,8 @@
   cursor: pointer;
 
   &__img {
-    width: 100%;
-    max-width: 300px;
-    max-height: 450px;
+    width: 300px;
+    height: 450px;
     border-radius: 8px 8px 0 0;
     pointer-events: none;
   }
@@ -92,7 +91,45 @@
 /* Modal */
 
 .modal {
-  background-color: white;
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+  color: $color-white;
+  background-color: $color-background;
+  border-radius: 8px;
+
+  &__img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px 0 0 8px;
+  }
+
+  &__info {
+    padding: 0 50px;
+  }
+
+  &__genre {
+    margin-bottom: 60px;
+    color: $color-accent;
+    font-weight: 500;
+  }
+
+  &__desc {
+    margin-bottom: 30px;
+    max-width: 40ch;
+    font-weight: 300;
+  }
+
+  &__duration,
+  &__release {
+    color: $color-accent;
+    font-weight: 300;
+
+    & strong {
+      font-weight: 500;
+    }
+  }
 
   &__background {
     position: fixed;

@@ -58,24 +58,23 @@ function ratingColor(rating) {
   }
 }
 
-async function createModal(results) {
+async function createModal(results, img) {
   const movie = await results;
   modalBackground.innerHTML = `
   <div class="modal">
-    <img src="" alt="" class="modal__img" />
+    <img src="${img}" class="modal__img" />
     <div class="modal__info">
       <h1 class="modal__title">${movie.title}</h1>
-      <p class="modal__genre">
-      ${movie.genres[0].name}/
-      ${movie.genres[1].name}/
-      ${movie.genres[2].name}
-      </p>
-      <p class="modal__duration">${movie.runtime}</p>
-      <p class="modal__release">${movie.release_date}</p>
+      <p class="modal__genre">${getGenres(movie.genres)}</p>
       <p class="modal__desc">${movie.overview}</p>
-      <div ${ratingColor(movie.vote_average)}">
-      ${movie.vote_average.toFixed(1)}
-      </div>
+      <p class="modal__release">
+        <strong>Release date: </strong>
+        ${movie.release_date}
+      </p>
+      <p class="modal__duration">
+        <strong>Duration: </strong>
+        ${movie.runtime} min
+      </p>
     </div>
   </div>`;
 }
@@ -85,13 +84,23 @@ function searchMovies(e) {
   createMovies(getMovies(search));
 }
 
+function getGenres(genres) {
+  genresList = "";
+  for (let i = 0; i < genres.length && i < 3; i++) {
+    if (i === 0) {
+      genresList += `${genres[i].name}`;
+    } else {
+      genresList += ` / ${genres[i].name}`;
+    }
+  }
+  return genresList;
+}
+
 function showModal(e) {
   if (e.target.classList.contains("card")) {
     modalBackground.classList.add("modal__background--active");
-    //USO I QUERYSELECTORS PER GRABARE IMG E TITOLO GIA PRESENTI
-    //const title = e.target.querySelector(".card__title").textContent;
-
+    const img = e.target.querySelector(".card__img").src;
     const id = `http://api.themoviedb.org/3/movie/${e.target.id}?api_key=04c35731a5ee918f014970082a0088b1`;
-    createModal(getMovies(id));
+    createModal(getMovies(id), img);
   }
 }
