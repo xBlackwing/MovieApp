@@ -4,6 +4,10 @@
   .modal__img {
     display: none;
   }
+
+  .modal__genre {
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -24,6 +28,7 @@
 
   .modal__info {
     padding: 0 20px;
+    font-size: 0.8rem;
   }
 }
 

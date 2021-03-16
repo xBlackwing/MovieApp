@@ -157,7 +157,7 @@ a {
 
 .modal__desc {
   max-width: 40ch;
-  height: 200px;
+  max-height: 200px;
   margin-bottom: 30px;
   font-weight: 300;
   white-space: pre-wrap;
@@ -203,6 +203,9 @@ a {
   .modal__img {
     display: none;
   }
+  .modal__genre {
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -222,6 +225,7 @@ a {
   }
   .modal__info {
     padding: 0 20px;
+    font-size: 0.8rem;
   }
 }
 
