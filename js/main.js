@@ -78,6 +78,7 @@ async function createModal(data, img) {
   const movie = await data;
   modalBackground.innerHTML = `
   <div class="modal">
+    <span class="modal__close">X</span>
     <img class="modal__img" src="${img}" alt="Movie poster" />
     <div class="modal__info">
       <h1 class="modal__title">${movie.title}</h1>
@@ -109,7 +110,10 @@ function getGenres(genres) {
 }
 
 function hideModal(e) {
-  if (e.target.classList.contains("modal__background--active")) {
+  if (
+    e.target.classList.contains("modal__background--active") ||
+    e.target.classList.contains("modal__close")
+  ) {
     modalBackground.classList.remove("modal__background--active");
   }
 }

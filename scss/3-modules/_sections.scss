@@ -92,6 +92,7 @@
 /* Modal */
 
 .modal {
+  position: relative;
   max-width: 80%;
   display: flex;
   align-items: center;
@@ -99,6 +100,19 @@
   background-color: $color-background;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
 
   &__img {
     width: 400px;
@@ -112,6 +126,7 @@
   &__title {
     max-width: 22ch;
     font-size: 1.7rem;
+    margin-right: 20px;
   }
 
   &__genre {

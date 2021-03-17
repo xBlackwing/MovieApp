@@ -123,6 +123,7 @@ a {
 
 /* Modal */
 .modal {
+  position: relative;
   max-width: 80%;
   display: -webkit-box;
   display: flex;
@@ -133,6 +134,19 @@ a {
   border-radius: 8px;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  color: #708ed2;
 }
 
 .modal__img {
@@ -147,6 +161,7 @@ a {
 .modal__title {
   max-width: 22ch;
   font-size: 1.7rem;
+  margin-right: 20px;
 }
 
 .modal__genre {
