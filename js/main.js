@@ -31,6 +31,7 @@ async function createMovies(data) {
     card.id = `${movie.id}`;
     const img = document.createElement("img");
     img.classList.add("card__img");
+    img.setAttribute("alt", "Movie poster");
     if (movie.poster_path) {
       img.src = `${imgUrl}${movie.poster_path}`;
     } else {
@@ -77,7 +78,7 @@ async function createModal(data, img) {
   const movie = await data;
   modalBackground.innerHTML = `
   <div class="modal">
-    <img class="modal__img" src="${img}" />
+    <img class="modal__img" src="${img}" alt="Movie poster" />
     <div class="modal__info">
       <h1 class="modal__title">${movie.title}</h1>
       <p class="modal__genre">${getGenres(movie.genres)}</p>
