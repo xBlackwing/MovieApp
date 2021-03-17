@@ -157,12 +157,10 @@ a {
 
 .modal__desc {
   max-width: 40ch;
-  max-height: 200px;
+  max-height: 230px;
   margin-bottom: 30px;
   font-weight: 300;
-  white-space: pre-wrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .modal__duration, .modal__release {
@@ -226,6 +224,9 @@ a {
   .modal__info {
     padding: 0 20px;
     font-size: 0.8rem;
+  }
+  .modal__title {
+    font-size: 1.3rem;
   }
 }
 
