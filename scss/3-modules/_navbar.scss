@@ -1,0 +1,48 @@
+/* Navbar */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $color-main;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
+
+  &__logo {
+    margin-left: 20px;
+
+    @media (max-width: 450px) {
+      margin-left: 0;
+      margin-bottom: 10px;
+      font-size: 3rem;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__searchbar {
+    padding: 10px 20px;
+    margin: 20px;
+    color: $color-main;
+    background-color: $color-white;
+    border-color: $color-background;
+    border-radius: 20px;
+    border-style: solid;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+
+    @media (max-width: 450px) {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    &::placeholder {
+      color: $color-main;
+    }
+  }
+}

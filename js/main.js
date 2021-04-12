@@ -1,6 +1,6 @@
 //Variables
 const main = document.querySelector(".main");
-const headerSearchbar = document.querySelector(".header__searchbar");
+const navbarSearchbar = document.querySelector(".navbar__searchbar");
 const modalBackground = document.querySelector(".modal__background");
 
 const apiMovies = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1`;
@@ -8,7 +8,7 @@ const apiSearch = `https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5
 const imgUrl = `https://image.tmdb.org/t/p/w500`;
 
 //Event Listeners
-headerSearchbar.addEventListener("input", searchMovies);
+navbarSearchbar.addEventListener("input", searchMovies);
 main.addEventListener("click", showModal);
 
 //Functions
