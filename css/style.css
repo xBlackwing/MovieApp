@@ -106,7 +106,15 @@ a {
   border-radius: 8px;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
+}
+
+.card:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.44);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.44);
 }
 
 .card__img {

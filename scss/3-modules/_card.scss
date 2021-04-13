@@ -3,7 +3,13 @@
   background-color: $color-main;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22);
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.44);
+  }
 
   &__img {
     max-width: 100%;
